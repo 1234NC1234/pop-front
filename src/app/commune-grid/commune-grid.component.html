@@ -1,0 +1,17 @@
+<table>
+  <thead>
+  <tr>
+    <td><debounce-input delay="500" placeholder="Commune" (value)="searchChanged('commune', $event)"></debounce-input></td>
+    <td><debounce-input delay="500" placeholder="Population" (value)="searchChanged('pop', $event)"></debounce-input></td>
+    <td><debounce-input delay="500" placeholder="Code insee" (value)="searchChanged('inseeCode', $event)"></debounce-input></td>
+    <td><debounce-input delay="500" placeholder="Code département" (value)="searchChanged('depCode', $event)"></debounce-input></td>
+  </tr>
+  </thead>
+    <tr *ngFor="let commune of communes;let i = index" [ngClass]="getTrClass(i)">
+      <td>{{commune.nom}}</td>
+      <td>{{commune.population}}</td>
+      <td>{{commune.inseeCode}}</td>
+      <td>{{commune.departementCode}}</td>
+    </tr>
+
+</table>
